@@ -1,13 +1,20 @@
-import { useState } from 'react';
+import { CapacitorWebAuth } from 'capacitor-web-auth';
+import React, { useState } from 'react';
 
 import reactLogo from './assets/react.svg';
 import './App.css';
 
-function App() {
+function App(): JSX.Element {
   const [count, setCount] = useState(0);
 
+  React.useEffect(() => {
+    CapacitorWebAuth.login({ value: 'Hello World' }).then((result: any) => {
+      console.log('Response: ', result);
+    });
+  }, []);
+
   return (
-    <div className="App">
+    <div className="App bg-red-500">
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
