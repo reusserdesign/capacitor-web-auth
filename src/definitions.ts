@@ -1,3 +1,3 @@
 export interface CapacitorWebAuthPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  login(options: { url: string, redirectScheme: string }): Promise<{ value: string }>;
 }
