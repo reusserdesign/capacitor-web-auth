@@ -1,0 +1,31 @@
+{
+  "api": {
+    "name": "CapacitorWebAuthPlugin",
+    "slug": "capacitorwebauthplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "login",
+        "signature": "(options: { url: string; redirectScheme: string; }) => Promise<{ value: string; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ url: string; redirectScheme: string; }"
+          }
+        ],
+        "returns": "Promise<{ value: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "login"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
