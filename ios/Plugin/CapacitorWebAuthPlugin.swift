@@ -41,9 +41,15 @@ public class CapacitorWebAuthPlugin: CAPPlugin, ASWebAuthenticationPresentationC
     
     public func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
         var view: ASPresentationAnchor?
-
-        DispatchQueue.main.async {
+        
+        if Thread.isMainThread {
+          // do stuff
             view = self.bridge?.webView?.window
+        } else {
+          DispatchQueue.main.sync {
+            // do stuff
+              view = self.bridge?.webView?.window
+          }
         }
 
         return view ?? ASPresentationAnchor()
