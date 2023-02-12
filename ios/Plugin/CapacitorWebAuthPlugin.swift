@@ -27,6 +27,11 @@ public class CapacitorWebAuthPlugin: CAPPlugin, ASWebAuthenticationPresentationC
                     "value": url?.absoluteString ?? ""
                 ])
             } else {
+                
+                if (error?.localizedDescription.contains("error 1") ?? false) {
+                    call.reject("Canceled")
+                    return;
+                }
                 call.reject("Invalid callback")
             }
         })
