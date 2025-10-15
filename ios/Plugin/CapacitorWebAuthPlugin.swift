@@ -38,8 +38,8 @@ public class CapacitorWebAuthPlugin: CAPPlugin, ASWebAuthenticationPresentationC
         })
         
         authVC.presentationContextProvider = self
-        authVC.prefersEphemeralWebBrowserSession = true
-        
+        authVC.prefersEphemeralWebBrowserSession = false
+
         DispatchQueue.main.async {
             authVC.start()
         }
